@@ -1,0 +1,26 @@
+{
+  "cli": {
+    "version": ">= 5.9.0"
+  },
+  "build": {
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://gpszwcbshpgmehzjaysi.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": ""
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_SUPABASE_URL": "https://gpszwcbshpgmehzjaysi.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": ""
+      }
+    }
+  }
+}

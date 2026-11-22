@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Family Guard",
+    "slug": "family-guard-parent",
+    "scheme": "familyguardparent",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "platforms": ["android", "web"],
+    "android": {
+      "package": "com.odusbaba.familyguard.parent",
+      "versionCode": 1
+    },
+    "web": { "bundler": "metro", "output": "single" },
+    "plugins": ["expo-router"],
+    "extra": {
+      "note": "Set EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_ANON_KEY as EAS env vars or in a local .env. The anon key is public by design; the service role key is NEVER in this app."
+    }
+  }
+}

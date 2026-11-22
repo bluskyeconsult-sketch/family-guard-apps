@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Family Guard",
+    "slug": "family-guard-child",
+    "scheme": "familyguardchild",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "platforms": ["android"],
+    "android": {
+      "package": "com.odusbaba.familyguard",
+      "versionCode": 1,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION",
+        "PACKAGE_USAGE_STATS",
+        "RECEIVE_BOOT_COMPLETED"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      ["expo-location", { "isAndroidBackgroundLocationEnabled": true }],
+      "./plugins/withHomeLauncher.js"
+    ],
+    "extra": {
+      "note": "Set EXPO_PUBLIC_API_BASE to the Family Guard Vercel URL. No secret is stored in this app; the per-device token is created at enrolment and kept in the OS secure store. The android package com.odusbaba.familyguard is the one used in the device-owner adb command."
+    }
+  }
+}

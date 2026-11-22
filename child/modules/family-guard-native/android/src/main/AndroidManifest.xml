@@ -1,0 +1,35 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+      tools:ignore="ProtectedPermissions" xmlns:tools="http://schemas.android.com/tools" />
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+      tools:ignore="QueryAllPackagesPermission" xmlns:tools="http://schemas.android.com/tools" />
+
+  <application>
+    <!-- Device admin / device owner receiver -->
+    <receiver
+        android:name=".GuardAdminReceiver"
+        android:permission="android.permission.BIND_DEVICE_ADMIN"
+        android:exported="true">
+      <meta-data
+          android:name="android.app.device_admin"
+          android:resource="@xml/guard_device_admin" />
+      <intent-filter>
+        <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+      </intent-filter>
+    </receiver>
+
+    <!-- Battery-light foreground location service -->
+    <service
+        android:name=".LocationForegroundService"
+        android:exported="false"
+        android:foregroundServiceType="location" />
+  </application>
+</manifest>
